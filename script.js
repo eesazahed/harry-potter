@@ -39,31 +39,22 @@ const createCard = (data) => {
 
   console.log(character);
 
-  const name = character.name;
-  const img = character.image
-    ? `<img src=${character.image} alt=${name}/>`
-    : "";
+  const img = character.image ? `<img src=${character.image} />` : "";
   const birthday = character.dateOfBirth ? "Born " + character.dateOfBirth : "";
   const actor = character.actor ? character.actor : "";
 
-  const alternate_actors = character.alternate_actors.map(
-    (actor) => ", " + actor
-  );
+  const alternate_actors = character.alternate_actors.map((actor) => ", " + actor);
 
-  const ancestry = character.ancestry
-    ? "Blood status: " + character.ancestry
-    : "";
+  const ancestry = character.ancestry ? "Blood status: " + character.ancestry : "";
   const house = character.house ? "Hogwarts house: " + character.house : "";
   const patronus = character.patronus ? "Patronus: " + character.patronus : "";
 
   const cardHTML = `
             <div class="profile">
-                  <h2>${name}</h2>
+                  <h2>${character.name}</h2>
                   ${img}
                   <p>${birthday}</p>
-                  <p>Played by: ${actor}${
-    alternate_actors ? alternate_actors : ""
-  }
+                  <p>Played by: ${actor}${alternate_actors ? alternate_actors : ""}
             </div>
             <div class="info">
                   </p>
