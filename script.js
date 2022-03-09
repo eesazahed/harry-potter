@@ -10,7 +10,7 @@ form.addEventListener("submit", (event) => {
 });
 
 const getCharacter = async (character) => {
-  const response = await fetch("http://hp-api.herokuapp.com/api/characters");
+  const response = await fetch("./harry-potter-data.json");
   const dataset = await response.json();
 
   card.innerHTML = "Character not found.";
